@@ -126,6 +126,7 @@ window.TrelloPowerUp.initialize(
               labelData.map((x) => {
                 labelDict[x.id] = x.name;
               });
+              if(priorityData[0]){
               priorityData[0].options.map((x) => {
                 priorityDict[x.id] = x.value.text;
               });
@@ -138,6 +139,7 @@ window.TrelloPowerUp.initialize(
                   cardPriorityList.push(cardPriorityDict);
                 }
               });
+            }
 
               cardData.map((x) => {
                 const cardDict = {};
