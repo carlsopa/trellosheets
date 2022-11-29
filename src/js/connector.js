@@ -17,13 +17,14 @@ window.TrelloPowerUp.initialize(
 						const 
 						DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4',
 						SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-						console.log(process.env.API_KEY);
-						console.log(process.env.CLIENT_ID);
+						// console.log(process.env.API_KEY);
+						// console.log(process.env.CLIENT_ID);
 
 						
 						let tokenClient,
 						gapiInited = false,
-      			gisInited = false;
+      			gisInited = false,
+            sheetId = '';
 
 						function gapiLoaded() {
               console.log('gapiloaded');
@@ -49,16 +50,31 @@ window.TrelloPowerUp.initialize(
 							gisInited = true;
 							maybeEnableButtons();
 						};
+            function createSheet(title, callback){
+              try{
+                gapi.client.sheets.spreadsheets.create({
+                  properties: {
+                    title: title
+                  }
+                }).then((response) =>{
+                  console.log(response.result.spreadsheetId)
+                  sheetId = response.result.spreadsheetId;
+                })
+              } catch(err){
+                console.log(err.message)
+              }
+            }
 						function maybeEnableButtons() {
 							if (gapiInited && gisInited) {
-								console.log('finally something good happens for me!')
+								// console.log('finally something good happens for me!')
 							}
 						};
-						console.log('you clicked this')
+						// console.log('you clicked this')
 						gapiLoaded();
 						gisLoaded();
-            console.log(gapiInited);
-            console.log(gisInited);
+            console.log(sheetId);
+            // console.log(gapiInited);
+            // console.log(gisInited);
 
 
 
@@ -174,11 +190,12 @@ window.TrelloPowerUp.initialize(
                 cardList.push(cardDict);
               });
               // cardList.map(x=>{console.log(x.priority)})
-              console.log(cardList);
+              // console.log(cardList);
               const finalList = [];
               cardList.forEach((x) => {
                 finalList.push(Object.values(x));
               });
+              console.log(finalList);
             })();
           },
         },
