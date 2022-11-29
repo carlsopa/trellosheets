@@ -1,0 +1,23 @@
+{
+  "name": "sheet",
+  "version": "1.0.0",
+  "description": "yet another version",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/html/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlsopa/trellosheets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlsopa/trellosheets/issues"
+  },
+  "homepage": "https://github.com/carlsopa/trellosheets#readme",
+  "dependencies": {
+    "parcel": "^2.8.0"
+  }
+}
