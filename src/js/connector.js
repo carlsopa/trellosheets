@@ -57,11 +57,12 @@ window.TrelloPowerUp.initialize(
                     title: title
                   }
                 }).then((response) =>{
+                  console.log(response)
                   console.log(response.result.spreadsheetId)
                   sheetId = response.result.spreadsheetId;
                 })
               } catch(err){
-                console.log(err.message)
+                console.log(err)
               }
             }
 						function maybeEnableButtons() {
