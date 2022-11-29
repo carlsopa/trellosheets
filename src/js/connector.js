@@ -63,7 +63,7 @@ window.TrelloPowerUp.initialize(
 
 
 						const auth = new google.auth.GoogleAuth({
-														keyFile: 'keys.json',
+														keyFile: process.env.GOOGLE_KEY,
 														scopes: 'https://www.googleapis.com/auth/spreadsheets'
 													});
 													const cardList = [];
