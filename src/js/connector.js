@@ -55,8 +55,8 @@ window.TrelloPowerUp.initialize(
               try{
                 gapi.client.sheets.spreadsheets.create({
                   properties: {
-                    title: title
-                  }
+                    title: title,
+                  },
                 }).then((response) =>{
                   console.log(response)
                   console.log(response.result.spreadsheetId)
