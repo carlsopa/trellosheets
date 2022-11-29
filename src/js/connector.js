@@ -26,6 +26,7 @@ window.TrelloPowerUp.initialize(
       			gisInited = false;
 
 						function gapiLoaded() {
+              console.log('gapiloaded');
 							gapi.load('client', intializeGapiClient);
 						};
 
@@ -39,6 +40,7 @@ window.TrelloPowerUp.initialize(
 						};
 
 						function gisLoaded() {
+              console.log('gisloaded');
 							tokenClient = google.accounts.oauth2.initTokenClient({
 								client_id: process.env.CLIENT_ID,
 								scope: SCOPES,
