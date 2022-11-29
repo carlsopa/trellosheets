@@ -16,7 +16,7 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
 						const 
 						DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4',
-						SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+						SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 						// console.log(process.env.API_KEY);
 						// console.log(process.env.CLIENT_ID);
 
