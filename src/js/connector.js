@@ -73,10 +73,11 @@ window.TrelloPowerUp.initialize(
 								// console.log('finally something good happens for me!')
 							}
 						};
-            createSheet('testing');
+            
 						// console.log('you clicked this')
 						gapiLoaded();
 						gisLoaded();
+            createSheet('testing');
             console.log(sheetId);
             // console.log(gapiInited);
             // console.log(gisInited);
