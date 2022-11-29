@@ -57,6 +57,8 @@ window.TrelloPowerUp.initialize(
 						console.log('you clicked this')
 						gapiLoaded();
 						gisLoaded();
+            console.log(gapiInited);
+            console.log(gisInited);
 
 
 
