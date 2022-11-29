@@ -67,10 +67,11 @@ window.TrelloPowerUp.initialize(
             }
 						function maybeEnableButtons() {
 							if (gapiInited && gisInited) {
-                createSheet('testing');
+                
 								// console.log('finally something good happens for me!')
 							}
 						};
+            createSheet('testing');
 						// console.log('you clicked this')
 						gapiLoaded();
 						gisLoaded();
