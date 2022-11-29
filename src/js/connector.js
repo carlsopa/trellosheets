@@ -51,6 +51,7 @@ window.TrelloPowerUp.initialize(
 							maybeEnableButtons();
 						};
             function createSheet(title, callback){
+              console.log('create sheet')
               try{
                 gapi.client.sheets.spreadsheets.create({
                   properties: {
