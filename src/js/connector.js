@@ -19,8 +19,8 @@ window.TrelloPowerUp.initialize(
 						SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
 						console.log(process.env.API_KEY);
 						console.log(process.env.CLIENT_ID);
-						console.log(env.API_KEY);
-						console.log(env.CLIENT_ID);
+						// console.log(env.API_KEY);
+						// console.log(env.CLIENT_ID);
 						
 						let tokenClient,
 						gapiInited = false,
