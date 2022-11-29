@@ -19,8 +19,7 @@ window.TrelloPowerUp.initialize(
 						SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
 						console.log(process.env.API_KEY);
 						console.log(process.env.CLIENT_ID);
-						// console.log(env.API_KEY);
-						// console.log(env.CLIENT_ID);
+
 						
 						let tokenClient,
 						gapiInited = false,
@@ -32,7 +31,7 @@ window.TrelloPowerUp.initialize(
 
 						async function intializeGapiClient() {
 							await gapi.client.init({
-								apiKey: API_KEY,
+								apiKey: process.env.API_KEY,
 								discoveryDocs: [DISCOVERY_DOC],
 							});
 							gapiInited = true;
@@ -41,7 +40,7 @@ window.TrelloPowerUp.initialize(
 
 						function gisLoaded() {
 							tokenClient = google.accounts.oauth2.initTokenClient({
-								client_id: CLIENT_ID,
+								client_id: process.env.CLIENT_ID,
 								scope: SCOPES,
 								callback: '', // defined later
 							});
