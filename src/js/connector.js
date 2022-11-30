@@ -1,4 +1,4 @@
-// import {google} from 'googleapis';
+import {google} from 'googleapis';
 // gapi.load('client',init);
 console.log("goodbest google sheet");
 console.log('paul')
@@ -17,9 +17,6 @@ window.TrelloPowerUp.initialize(
 						const 
 						DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4',
 						SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
-						// console.log(process.env.API_KEY);
-						// console.log(process.env.CLIENT_ID);
-
 						
 						let tokenClient,
 						gapiInited = false,
@@ -37,7 +34,6 @@ window.TrelloPowerUp.initialize(
 								discoveryDocs: [DISCOVERY_DOC],
 							});
 							gapiInited = true;
-							maybeEnableButtons();
 						};
 
 						function gisLoaded() {
@@ -48,11 +44,11 @@ window.TrelloPowerUp.initialize(
 								callback: '', // defined later
 							});
 							gisInited = true;
-							maybeEnableButtons();
 						};
+
             function createSheet(title, callback){
               console.log('create sheet')
-              console.log(gapi['client'])
+              console.log(gapi.client)
               try{
                 gapi.client.sheets.spreadsheets.create({
                   properties: {
@@ -67,27 +63,17 @@ window.TrelloPowerUp.initialize(
                 console.log(err)
               }
             }
-						function maybeEnableButtons() {
-							if (gapiInited && gisInited) {
-                
-								// console.log('finally something good happens for me!')
-							}
-						};
-            
-						// console.log('you clicked this')
+						
 						gapiLoaded();
 						gisLoaded();
             createSheet('testing');
             console.log(sheetId);
-            // console.log(gapiInited);
-            // console.log(gisInited);
 
 
-
-						// const auth = new google.auth.GoogleAuth({
-						// 								keyFile: process.env.GOOGLE_KEY,
-						// 								scopes: 'https://www.googleapis.com/auth/spreadsheets'
-						// 							});
+						const auth = new google.auth.GoogleAuth({
+														keyFile: process.env.GOOGLE_KEY,
+														scopes: 'https://www.googleapis.com/auth/spreadsheets'
+													});
 													const cardList = [];
 													const listDict = {};
 													const memberDict = {};

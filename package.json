@@ -2,7 +2,6 @@
   "name": "sheet",
   "version": "1.0.0",
   "description": "yet another version",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build src/html/*.html"
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/carlsopa/trellosheets#readme",
   "dependencies": {
+    "googleapis": "^109.0.1",
     "parcel": "^2.8.0"
   }
 }
