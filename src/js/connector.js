@@ -1,5 +1,6 @@
 // import {google} from 'googleapis';
 // gapi.load('client',init);
+const axios = require('axios');
 console.log("goodbest google sheet");
 console.log('paul')
 
@@ -73,6 +74,7 @@ window.TrelloPowerUp.initialize(
           text: "Good-beast GSheet integrator",
           callback: function (t) {
             console.log('goofy')
+            
 						// const 
 						// DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4',
 						// SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
