@@ -74,7 +74,8 @@ window.TrelloPowerUp.initialize(
           text: "Good-beast GSheet integrator",
           callback: function (t) {
             console.log('goofy')
-            
+            const aa = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/first'
+            console.log(aa)
 						// const 
 						// DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4',
 						// SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
