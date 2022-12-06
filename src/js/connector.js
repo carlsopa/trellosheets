@@ -62,7 +62,7 @@ window.TrelloPowerUp.initialize(
                 })
                 cardDict['members'] = x.idMembers.join();
                 x.idLabels.forEach((l,index)=>{
-                  x.idLabels[index] = labelDict[l];
+                  x.idLabels[index] = labelData[l];
                 })
                 cardDict['labels'] = x.idLabels.join(', ');
                 if(x.dateLastActivity){
