@@ -17,22 +17,24 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             
             (async function(){
+              const cardList = [];
+
               const fetchCardMembers = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers'
               const fetchCardLists = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists'
               const fetchLabelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
               const fetchPriorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
               const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
 
-              var cm = await fetch(fetchCardMembers)
-              var memberData = await cm.text();
-              var cl = await fetch(fetchCardLists)
-              var listData = await cl.text();
-              var ld = await fetch(fetchLabelData)
-              var labelData = await ld.text();
-              var pd = await fetch(fetchPriorityData)
-              var priorityData = await pd.text();
-              var cd = await fetch(fetchCardData)
-              var cardData = await cd.text();
+              const cm = await fetch(fetchCardMembers)
+              let memberData = await cm.text();
+              const cl = await fetch(fetchCardLists)
+              let listData = await cl.text();
+              const ld = await fetch(fetchLabelData)
+              let labelData = await ld.text();
+              const pd = await fetch(fetchPriorityData)
+              let priorityData = await pd.text();
+              const cd = await fetch(fetchCardData)
+              let cardData = await cd.text();
 
               memberData = JSON.parse(memberData);
               listData = JSON.parse(listData);
@@ -46,19 +48,6 @@ window.TrelloPowerUp.initialize(
               // console.log(priorityData);
               // console.log(cardData);
               // console.log(listData);
-              // listData.map(x=>{
-              //   listDict[x.id] = x.name;
-              // })
-              // console.log(listDict)
-              // memberData.map(x=>{
-              //   memberDict[x.id] = x.fullName;
-              // })
-              // labelData.map(x=>{
-              //   labelDict[x.id] = x.name;
-              // })
-              // priorityData[0].options.map(x=>{
-              //   priorityDict[x.id] = x.value.text;
-              // })
                             
               cardData.map(x=>{
                 const cardDict = {};
