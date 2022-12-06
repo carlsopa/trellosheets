@@ -79,7 +79,6 @@ window.TrelloPowerUp.initialize(
             const labelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
             const priorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
             const cardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
-            console.log(aa)
             (async function(){
 
               var cm = await fetch(cardMembers)
