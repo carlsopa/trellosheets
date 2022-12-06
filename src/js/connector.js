@@ -18,7 +18,7 @@ window.TrelloPowerUp.initialize(
               const fetchLabelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
               const fetchPriorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
               const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
-              const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData/createSheet'
+              const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet'
 
               const cm = await fetch(fetchCardMembers)
               let memberData = await cm.text();
