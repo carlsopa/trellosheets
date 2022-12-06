@@ -45,57 +45,58 @@ window.TrelloPowerUp.initialize(
               // console.log(labelData);
               // console.log(priorityData);
               // console.log(cardData);
-              listData.map(x=>{
-                listDict[x.id] = x.name;
-              })
-              console.log(listDict)
-              memberData.map(x=>{
-                memberDict[x.id] = x.fullName;
-              })
-              labelData.map(x=>{
-                labelDict[x.id] = x.name;
-              })
-              priorityData[0].options.map(x=>{
-                priorityDict[x.id] = x.value.text;
-              })
+              console.log(listData);
+              // listData.map(x=>{
+              //   listDict[x.id] = x.name;
+              // })
+              // console.log(listDict)
+              // memberData.map(x=>{
+              //   memberDict[x.id] = x.fullName;
+              // })
+              // labelData.map(x=>{
+              //   labelDict[x.id] = x.name;
+              // })
+              // priorityData[0].options.map(x=>{
+              //   priorityDict[x.id] = x.value.text;
+              // })
                             
-              cardData.map(x=>{
-                const cardDict = {};
-                cardDict['id'] = x.id;
-                cardDict['title'] = x.name;
-                cardDict['description'] = x.desc;
-                cardDict['url'] = x.url;
-                cardDict['comments'] = x.badges.comments;
-                cardDict['list'] = listDict[x.idList];
-                x.idMembers.forEach((m,index)=>{
-                  x.idMembers[index] = memberDict[m]
-                })
-                cardDict['members'] = x.idMembers.join();
-                x.idLabels.forEach((l,index)=>{
-                  x.idLabels[index] = labelDict[l];
-                })
-                cardDict['labels'] = x.idLabels.join(', ');
-                if(x.dateLastActivity){
-                  let date = new Date(x.dateLastActivity);
-                  date = date.toDateString();
-                  cardDict['last activity'] = date;
-                }
-                if(x.due){
-                  let date = new Date(x.due);
-                  date = date.toDateString();
-                  cardDict['due date'] = date;
-                }
-                if(x.customFieldItems.length > 0){
-                  cardDict['priority'] = priorityDict[x.customFieldItems[0].idValue]
-                }
-                cardList.push(cardDict);
-              })
+              // cardData.map(x=>{
+              //   const cardDict = {};
+              //   cardDict['id'] = x.id;
+              //   cardDict['title'] = x.name;
+              //   cardDict['description'] = x.desc;
+              //   cardDict['url'] = x.url;
+              //   cardDict['comments'] = x.badges.comments;
+              //   cardDict['list'] = listDict[x.idList];
+              //   x.idMembers.forEach((m,index)=>{
+              //     x.idMembers[index] = memberDict[m]
+              //   })
+              //   cardDict['members'] = x.idMembers.join();
+              //   x.idLabels.forEach((l,index)=>{
+              //     x.idLabels[index] = labelDict[l];
+              //   })
+              //   cardDict['labels'] = x.idLabels.join(', ');
+              //   if(x.dateLastActivity){
+              //     let date = new Date(x.dateLastActivity);
+              //     date = date.toDateString();
+              //     cardDict['last activity'] = date;
+              //   }
+              //   if(x.due){
+              //     let date = new Date(x.due);
+              //     date = date.toDateString();
+              //     cardDict['due date'] = date;
+              //   }
+              //   if(x.customFieldItems.length > 0){
+              //     cardDict['priority'] = priorityDict[x.customFieldItems[0].idValue]
+              //   }
+              //   cardList.push(cardDict);
+              // })
 
-              const finalList = []
-              cardList.forEach(x=>{
-                finalList.push(Object.values(x))
-              })
-              console.log(finalList)
+              // const finalList = []
+              // cardList.forEach(x=>{
+              //   finalList.push(Object.values(x))
+              // })
+              // console.log(finalList)
               
             }())
           },
