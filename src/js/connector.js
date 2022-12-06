@@ -74,31 +74,31 @@ window.TrelloPowerUp.initialize(
           text: "Good-beast GSheet integrator",
           callback: function (t) {
             console.log('goofy')
-            const cardMembers = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers'
-            const cardLists = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists'
-            const labelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
-            const priorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
+            // const cardMembers = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers'
+            // const cardLists = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists'
+            // const labelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
+            // const priorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
             const cardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
             (async function(){
 
-              var cm = await fetch(cardMembers)
-              var cl = await fetch(cardLists)
-              var ld = await fetch(labelData)
-              var pd = await fetch(priorityData)
+              // var cm = await fetch(cardMembers)
+              // var cl = await fetch(cardLists)
+              // var ld = await fetch(labelData)
+              // var pd = await fetch(priorityData)
               var cd = await fetch(cardData)
 
               // var aa = await fetch('https://api.trello.com/1/boards/62b9d5d4cd6b7c794607ebe2/cards?customFieldItems=true&key=8567e52ef0a5c3a9a4a76eb2722ea6d0&token=491a487812cc3fb1d1f188f9e693340640d287f36ef0bac4880c1fb707edbedc')
 	            // var cd = await aa.text();
               // console.log(cd)
-              var cmText = await cm.text();
-              var clText = await cl.text();
-              var ldText = await ld.text();
-              var pdText = await pd.text();
+              // var cmText = await cm.text();
+              // var clText = await cl.text();
+              // var ldText = await ld.text();
+              // var pdText = await pd.text();
               var cdText = await cd.text();
-              console.log(cmText)
-              console.log(clText)
-              console.log(ldText)
-              console.log(pdText)
+              // console.log(cmText)
+              // console.log(clText)
+              // console.log(ldText)
+              // console.log(pdText)
               console.log(cdText)
 
               
