@@ -7,64 +7,6 @@ console.log('paul')
 let BLACK_ROCKET_ICON =
   "https://cdn.glitch.com/1b42d7fe-bda8-4af8-a6c8-eff0cea9e08a%2Frocket-ship.png?1494946700421";
 
-function gapiLoaded() {
-              console.log('gapiloaded');
-							gapi.load('client', intializeGapiClient);
-						};
-
-async function intializeGapiClient() {
-  await gapi.client.init({
-    apiKey: process.env.API_KEY,
-    discoveryDocs: [DISCOVERY_DOC],
-  });
-  gapiInited = true;
-};
-
-function gisLoaded() {
-  console.log('gisloaded');
-  tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: process.env.CLIENT_ID,
-    scope: SCOPES,
-    callback: '', // defined later
-  });
-  gisInited = true;
-};
-
-function createSheet(title, callback){
-  console.log('create sheet')
-  console.log(gapi.client)
-  try{
-    gapi.client.sheets.spreadsheets.create({
-      properties: {
-        title: title,
-      },
-    }).then((response) =>{
-      console.log(response)
-      console.log(response.result.spreadsheetId)
-      sheetId = response.result.spreadsheetId;
-    })
-  } catch(err){
-    console.log(err)
-  }
-}  
-
-function handleAuthClick() {
-  tokenClient.callback = async (resp) => {
-    if (resp.error !== undefined) {
-      throw (resp);
-    }
-  };
-
-  if (gapi.client.getToken() === null) {
-    // Prompt the user to select a Google Account and ask for consent to share their data
-    // when establishing a new session.
-    tokenClient.requestAccessToken({prompt: 'consent'});
-  } else {
-    // Skip display of account chooser and consent dialog for an existing session.
-    tokenClient.requestAccessToken({prompt: ''});
-  }
-}
-
 window.TrelloPowerUp.initialize(
   {
     "board-buttons": function (t) {
@@ -78,9 +20,9 @@ window.TrelloPowerUp.initialize(
             // const cardLists = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists'
             // const labelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
             // const priorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
-            const cardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
+            
             (async function(){
-
+const cardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
               // var cm = await fetch(cardMembers)
               // var cl = await fetch(cardLists)
               // var ld = await fetch(labelData)
