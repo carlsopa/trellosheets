@@ -74,7 +74,7 @@ window.TrelloPowerUp.initialize(
                 finalList.push(Object.values(x))
               })
               console.log(finalList)
-              const cs = await fetch(createSheet)
+              const cs = await fetch(createSheet,finalList)
               let csResult = await cs.text();
               console.log(csResult)
               
