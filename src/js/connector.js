@@ -67,9 +67,9 @@ window.TrelloPowerUp.initialize(
                 cardDict['description'] = x.desc;
                 cardDict['url'] = x.url;
                 cardDict['comments'] = x.badges.comments;
-                cardDict['list'] = listDict[x.idList];
+                cardDict['list'] = listData[x.idList];
                 x.idMembers.forEach((m,index)=>{
-                  x.idMembers[index] = memberDict[m]
+                  x.idMembers[index] = memberData[m]
                 })
                 cardDict['members'] = x.idMembers.join();
                 x.idLabels.forEach((l,index)=>{
@@ -87,7 +87,7 @@ window.TrelloPowerUp.initialize(
                   cardDict['due date'] = date;
                 }
                 if(x.customFieldItems.length > 0){
-                  cardDict['priority'] = priorityDict[x.customFieldItems[0].idValue]
+                  cardDict['priority'] = priorityData[x.customFieldItems[0].idValue]
                 }
                 cardList.push(cardDict);
               })
