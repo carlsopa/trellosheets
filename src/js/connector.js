@@ -1,9 +1,3 @@
-// import {google} from 'googleapis';
-// gapi.load('client',init);
-// const axios = require('axios');
-console.log("goodbest google sheet");
-console.log('paul')
-
 let BLACK_ROCKET_ICON =
   "https://cdn.glitch.com/1b42d7fe-bda8-4af8-a6c8-eff0cea9e08a%2Frocket-ship.png?1494946700421";
 
@@ -24,6 +18,7 @@ window.TrelloPowerUp.initialize(
               const fetchLabelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
               const fetchPriorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
               const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
+              const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData/createSheet'
 
               const cm = await fetch(fetchCardMembers)
               let memberData = await cm.text();
@@ -41,13 +36,6 @@ window.TrelloPowerUp.initialize(
               labelData = JSON.parse(labelData);
               priorityData = JSON.parse(priorityData);
               cardData = JSON.parse(cardData);
-
-              // console.log(memberData);
-              // console.log(listData);
-              // console.log(labelData);
-              // console.log(priorityData);
-              // console.log(cardData);
-              // console.log(listData);
                             
               cardData.map(x=>{
                 const cardDict = {};
@@ -86,6 +74,8 @@ window.TrelloPowerUp.initialize(
                 finalList.push(Object.values(x))
               })
               console.log(finalList)
+              const cs = await fetch(createSheet)
+              let csResult = await cs.text();
               
             }())
           },
