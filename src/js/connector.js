@@ -5,7 +5,7 @@ window.TrelloPowerUp.initialize(
   {
     "board-buttons": function (t) {
       var context = t.getContext();
-      console.log(JSON.stringify(context, null, 2));
+      var dd = context['board']
       return [
         {
           icon: BLACK_ROCKET_ICON,
@@ -13,7 +13,7 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             // const context = t.getContext()
             // const boardId = context['board']
-           console.log(context)
+           console.log(dd)
            
 
             // const boardId = t.board('id').then(name=>{return name});
