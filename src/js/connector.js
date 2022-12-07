@@ -46,6 +46,12 @@ window.TrelloPowerUp.initialize(
               labelData = JSON.parse(labelData);
               priorityData = JSON.parse(priorityData);
               cardData = JSON.parse(cardData);
+
+              console.log(memberData);
+              console.log(listData);
+              console.log(labelData);
+              console.log(priorityData);
+              console.log(cardData);
                             
               cardData.map(x=>{
                 const cardDict = {};
