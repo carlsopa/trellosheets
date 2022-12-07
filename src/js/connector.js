@@ -24,24 +24,21 @@ window.TrelloPowerUp.initialize(
 
               const fetchCardMembers = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers?id=${boardId}`
               const fetchCardLists = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists?id=${boardId}`
-              const fetchLabelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
-              const fetchPriorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
-              const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
-              const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet'
+              const fetchLabelData = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData?id=${boardId}`
+              const fetchPriorityData = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData?id=${boardId}`
+              const fetchCardData = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData?id=${boardId}`
+              const createSheet = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet?id=${boardId}`
               console.log(boardId)
 
               const cm = await fetch(fetchCardMembers)
               let memberData = await cm.text();
-              console.log(memberData)
               const cl = await fetch(fetchCardLists)
               let listData = await cl.text();
-
-              console.log(listData)
-              const ld = await fetch(fetchLabelData,{method:'POST',body:boardId})
+              const ld = await fetch(fetchLabelData)
               let labelData = await ld.text();
-              const pd = await fetch(fetchPriorityData,{method:'POST',body:boardId})
+              const pd = await fetch(fetchPriorityData)
               let priorityData = await pd.text();
-              const cd = await fetch(fetchCardData,{method:'POST',body:boardId})
+              const cd = await fetch(fetchCardData)
               let cardData = await cd.text();
 
               memberData = JSON.parse(memberData);
