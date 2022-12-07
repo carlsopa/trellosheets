@@ -11,15 +11,15 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             const context = t.getContext()
             const boardId = context['board']
-            // t.getRestApi()
-            // .isAuthorized()
-            // .then(function(isAuth) {
-            //   if(isAuth){
-            //     console.log('looks good')
-            //   } else {
-            //     console.log('fix issue')
-            //   }
-            // })
+            t.getRestApi()
+            .isAuthorized()
+            .then(function(isAuth) {
+              if(isAuth){
+                console.log('looks good')
+              } else {
+                console.log('fix issue')
+              }
+            })
 
             // const boardId = t.board('id').then(name=>{return name});
             // const boardName = t.board('name').then(name=>{return name});
