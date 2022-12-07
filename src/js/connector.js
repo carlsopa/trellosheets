@@ -22,18 +22,21 @@ window.TrelloPowerUp.initialize(
             (async function(){
               const cardList = [];
 
-              const fetchCardMembers = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers'
-              const fetchCardLists = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists'
+              const fetchCardMembers = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers?id=${boardId}`
+              const fetchCardLists = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists?id=${boardId}`
               const fetchLabelData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/labelData'
               const fetchPriorityData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData'
               const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
               const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet'
               console.log(boardId)
 
-              const cm = await fetch(fetchCardMembers,{method:'POST',body:boardId})
+              const cm = await fetch(fetchCardMembers)
               let memberData = await cm.text();
-              const cl = await fetch(fetchCardLists,{method:'POST',body:boardId})
+              console.log(memberData)
+              const cl = await fetch(fetchCardLists)
               let listData = await cl.text();
+
+              console.log(listData)
               const ld = await fetch(fetchLabelData,{method:'POST',body:boardId})
               let labelData = await ld.text();
               const pd = await fetch(fetchPriorityData,{method:'POST',body:boardId})
