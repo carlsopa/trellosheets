@@ -102,7 +102,7 @@ window.TrelloPowerUp.initialize(
     },
   },
   {
-    appKey: "8567e52ef0a5c3a9a4a76eb2722ea6d0",
+    appKey: "d78e506dac377b3f018c928740480038",
     appName: "Good-beast GSheet instegator",
   }
 );
