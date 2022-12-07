@@ -76,7 +76,7 @@ window.TrelloPowerUp.initialize(
               console.log(finalList)
               // console.log(JSON.parse(finalList))
               console.log(JSON.stringify(finalList))
-              const cs = await fetch(createSheet,{method:'POST',body:finalList})
+              const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(finalList),headers: {'Content-Type': 'application/json'}})
               let csResult = await cs.text();
               console.log(csResult)
               
