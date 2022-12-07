@@ -91,10 +91,10 @@ window.TrelloPowerUp.initialize(
               })
               console.log(finalList)
               
-              // console.log(JSON.stringify(finalList))
-              // const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(finalList),headers: {'Content-Type': 'application/json'}})
-              // let csResult = await cs.text();
-              // console.log(csResult)
+              console.log(JSON.stringify(finalList))
+              const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(finalList),headers: {'Content-Type': 'application/json'}})
+              let csResult = await cs.text();
+              console.log(csResult)
               
             }())
           },
