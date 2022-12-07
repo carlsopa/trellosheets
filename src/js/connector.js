@@ -9,9 +9,9 @@ window.TrelloPowerUp.initialize(
           icon: BLACK_ROCKET_ICON,
           text: "Good-beast GSheet integrator",
           callback: function (t) {
-            // const context = t.getContext()
+            const context = t.getContext()
             // const boardId = context['board']
-            t.get('board').then(function(data){console.log(JSON.stringify(data))})
+           console.log(context)
            
 
             // const boardId = t.board('id').then(name=>{return name});
