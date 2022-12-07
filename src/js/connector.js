@@ -9,7 +9,7 @@ window.TrelloPowerUp.initialize(
           icon: BLACK_ROCKET_ICON,
           text: "Good-beast GSheet integrator",
           callback: function (t) {
-            console.log(t.board.id)
+            t.board('id').then(name=>console.log(name))
             
             (async function(){
               const cardList = [];
