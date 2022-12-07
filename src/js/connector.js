@@ -23,7 +23,9 @@ window.TrelloPowerUp.initialize(
               const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet'
 
               const cm = await fetch(fetchCardMembers,{method:'POST',body:boardId})
+              console.log(cm)
               let memberData = await cm.text();
+              console.log(memberData)
               const cl = await fetch(fetchCardLists,{method:'POST',body:boardId})
               let listData = await cl.text();
               const ld = await fetch(fetchLabelData,{method:'POST',body:boardId})
