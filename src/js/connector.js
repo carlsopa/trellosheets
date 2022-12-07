@@ -9,8 +9,8 @@ window.TrelloPowerUp.initialize(
           icon: BLACK_ROCKET_ICON,
           text: "Good-beast GSheet integrator",
           callback: function (t) {
-            t.board('id').then(name=>console.log(name));
-            t.board('name').then(name=>console.log(name));
+            const boardId = t.board('id').then(name=>{return name});
+            const boardName = t.board('name').then(name=>{return name});
             
             (async function(){
               const cardList = [];
@@ -22,15 +22,15 @@ window.TrelloPowerUp.initialize(
               const fetchCardData = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData'
               const createSheet = 'https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet'
 
-              const cm = await fetch(fetchCardMembers)
+              const cm = await fetch(fetchCardMembers,{method:'POST',body:boardId})
               let memberData = await cm.text();
-              const cl = await fetch(fetchCardLists)
+              const cl = await fetch(fetchCardLists,{method:'POST',body:boardId})
               let listData = await cl.text();
-              const ld = await fetch(fetchLabelData)
+              const ld = await fetch(fetchLabelData,{method:'POST',body:boardId})
               let labelData = await ld.text();
-              const pd = await fetch(fetchPriorityData)
+              const pd = await fetch(fetchPriorityData,{method:'POST',body:boardId})
               let priorityData = await pd.text();
-              const cd = await fetch(fetchCardData)
+              const cd = await fetch(fetchCardData,{method:'POST',body:boardId})
               let cardData = await cd.text();
 
               memberData = JSON.parse(memberData);
