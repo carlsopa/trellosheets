@@ -4,12 +4,14 @@ let BLACK_ROCKET_ICON =
 window.TrelloPowerUp.initialize(
   {
     "board-buttons": function (t) {
+      var context = t.getContext();
+      console.log(JSON.stringify(context, null, 2));
       return [
         {
           icon: BLACK_ROCKET_ICON,
           text: "Good-beast GSheet integrator",
           callback: function (t) {
-            const context = t.getContext()
+            // const context = t.getContext()
             // const boardId = context['board']
            console.log(context)
            
