@@ -74,7 +74,7 @@ window.TrelloPowerUp.initialize(
                 finalList.push(Object.values(x))
               })
               console.log(finalList)
-              const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(finalList)})
+              const cs = await fetch(createSheet,{method:'POST',body:JSON.parse(finalList)})
               let csResult = await cs.text();
               console.log(csResult)
               
