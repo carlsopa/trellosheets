@@ -11,7 +11,7 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             const context = t.getContext()
             console.log(context);
-            const boardId = context['board']
+            const boardId = context['version']
             // const boardId = t.board('id').then(name=>{return name});
             // const boardName = t.board('name').then(name=>{return name});
             
