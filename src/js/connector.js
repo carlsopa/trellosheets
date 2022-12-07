@@ -10,11 +10,17 @@ window.TrelloPowerUp.initialize(
           text: "Good-beast GSheet integrator",
           callback: function (t) {
             const context = t.getContext()
-            console.log(context);
             const boardId = context['board']
+            t.getRestApi()
+            .isAuthorized()
+            .then(function(isAuth) {
+              if(isAuth){
+                console.log('looks good')
+              } else {
+                console.log('fix issue')
+              }
+            })
 
-            let c = JSON.stringify(context);
-            console.log(c)
             // const boardId = t.board('id').then(name=>{return name});
             // const boardName = t.board('name').then(name=>{return name});
             
@@ -30,7 +36,7 @@ window.TrelloPowerUp.initialize(
               console.log(boardId)
 
               const cm = await fetch(fetchCardMembers,{method:'POST',body:boardId})
-              console.log(cm)
+
               let memberData = await cm.text();
               console.log(memberData)
               // const cl = await fetch(fetchCardLists,{method:'POST',body:boardId})
