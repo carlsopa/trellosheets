@@ -81,9 +81,9 @@ elm.addEventListener('click',()=>{
                 finalList.push(Object.values(x))
               })
               console.log(finalList)
-              
+              const list = {'id':boardId,data:finalList}
               console.log(JSON.stringify(finalList))
-              const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(finalList),headers: {'Content-Type': 'application/json'}})
+              const cs = await fetch(createSheet,{method:'POST',body:list,headers: {'Content-Type': 'application/json'}})
               let csResult = await cs.text();
               console.log(csResult)       
             }())
