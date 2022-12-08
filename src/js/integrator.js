@@ -1,7 +1,7 @@
 var t = TrelloPowerUp.iframe();
 const boardId = t.getContext().board;
 console.log('data')
-console.log(i)
+console.log(boardId)
 
 const elm = document.getElementById('subbtn');
 console.log('you clicked here');
