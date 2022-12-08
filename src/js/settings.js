@@ -15,6 +15,7 @@ t.render(()=>{
 				idValue.value = data;
 				idValue.readOnly = true
 				update.style.display = true;
+				submitBtn.disabled = true;
 			} else {
 				console.log('missing')
 				update.style.display = false;
@@ -36,4 +37,6 @@ submitBtn.addEventListener('click',()=>{
 })
 update.addEventListener('click',()=>{
 	console.log('you want to update');
+	idValue.readOnly = false
+	submitBtn.disabled = false;
 })
