@@ -2,10 +2,9 @@ var t = TrelloPowerUp.iframe();
 
 const submitBtn = document.getElementById('submit')
 const idValue = document.getElementById('idValue')
-const permissions = t.getContext().permissions;
+const update = document.getElementById('updateLink')
 let set = false;
 t.render(()=>{
-	console.log(permissions);
 	return t.get('board','shared','bid')
 		.then(data=>{
 			console.log(data)
@@ -13,9 +12,14 @@ t.render(()=>{
 			if(d){
 				console.log('found')
 				set = true;
+				idValue.value = data;
+				idValue.readOnly = true
+				update.style.display = true;
 			} else {
 				console.log('missing')
+				update.style.display = false;
 				set = false;
+
 			}
 		})
 })
@@ -29,4 +33,7 @@ submitBtn.addEventListener('click',()=>{
 		console.log(idValue.value)
 	}
 	t.closePopup();
+})
+update.addEventListener('click',()=>{
+	console.log('you want to update');
 })
