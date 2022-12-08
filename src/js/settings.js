@@ -39,4 +39,5 @@ update.addEventListener('click',()=>{
 	console.log('you want to update');
 	idValue.readOnly = false
 	submitBtn.disabled = false;
+	set = false;
 })
