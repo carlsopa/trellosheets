@@ -6,7 +6,7 @@ const permissions = t.getContext().permissions;
 let set = false;
 t.render(()=>{
 	console.log(permissions);
-	t.get('board','shared','bid')
+	return t.get('board','shared','bid')
 		.then(data=>{
 			console.log(data)
 			let d = JSON.stringify(data)
@@ -24,7 +24,7 @@ submitBtn.addEventListener('click',()=>{
 	console.log(set)
 	if(!set){
 		console.log(idValue.value)
-		t.set('board','shared','bid',idValue.value)
+		return t.set('board','shared','bid',idValue.value)
 	} else{
 		console.log(idValue.value)
 	}
