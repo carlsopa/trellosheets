@@ -3,10 +3,11 @@ var t = TrelloPowerUp.iframe();
 const submitBtn = document.getElementById('submit')
 const idValue = document.getElementById('idValue')
 t.render(()=>{
-	return t.get('board','shared','bid')
+	const aa = t.get('board','shared','bid')
 		.then(data=>{
-			console.log(JSON.stringify(data))
+			return JSON.stringify(data)
 		})
+		console.log(aa)
 })
 
 submitBtn.addEventListener('click',()=>{
