@@ -2,7 +2,12 @@ let BLACK_ROCKET_ICON =
   "https://cdn.glitch.com/1b42d7fe-bda8-4af8-a6c8-eff0cea9e08a%2Frocket-ship.png?1494946700421";
 
 window.TrelloPowerUp.initialize(
-  {
+  { "show-settings": function(t){
+    return t.popup({
+      title:'goodbeast settings',
+      url:'settings.html'
+    })
+  },
     "board-buttons": function (t) {
       var context = t.getContext();
       var boardId = context['board']
@@ -13,7 +18,7 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             return t.popup({
               title:'integrator',
-              url:'index.html'
+              url:'data.html'
             })
             
             // (async function(){
