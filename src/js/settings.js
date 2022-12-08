@@ -4,8 +4,9 @@ const submitBtn = document.getElementById('submit')
 const idValue = document.getElementById('idValue')
 let set = false;
 t.render(()=>{
-	const aa = t.get('board','shared','bid')
+	t.get('board','shared','bid')
 		.then(data=>{
+			console.log(data)
 			let d = JSON.stringify(data)
 			if(d){
 				console.log('found')
@@ -15,10 +16,10 @@ t.render(()=>{
 				set = false;
 			}
 		})
-		console.log(aa)
 })
 
 submitBtn.addEventListener('click',()=>{
+	console.log(set)
 	if(!set){
 		t.set('board','shared','bid',idValue.value)
 	} else{
