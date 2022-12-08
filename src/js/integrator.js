@@ -1,5 +1,5 @@
 var t = TrelloPowerUp.iframe();
-const i = t.getContext().board()
+const i = t.getContext().board;
 console.log('data')
 console.log(i)
 
