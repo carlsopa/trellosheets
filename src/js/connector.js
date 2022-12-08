@@ -13,7 +13,7 @@ window.TrelloPowerUp.initialize(
           callback: function (t) {
             return t.popup({
               title:'integrator',
-              url:'../html/index.html'
+              url:'index.html'
             })
             
             // (async function(){
