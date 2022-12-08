@@ -1,5 +1,5 @@
 var t = TrelloPowerUp.iframe();
-const i = t.getContext().board;
+const boardId = t.getContext().board;
 console.log('data')
 console.log(i)
 
@@ -7,6 +7,10 @@ const elm = document.getElementById('subbtn');
 console.log('you clicked here');
 
 elm.addEventListener('click',()=>{
+	return t.get('board','shared','bid')
+		.then(data=>{
+			console.log(data)
+		});
 
 	// (async function(){
             //   const cardList = [];
