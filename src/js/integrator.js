@@ -6,7 +6,7 @@ console.log(i)
 const elm = document.getElementById('subbtn');
 console.log('you clicked here');
 
-elm.addEventListener('click',(){
+elm.addEventListener('click',()=>{
 
 	// (async function(){
             //   const cardList = [];
