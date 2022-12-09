@@ -9,7 +9,6 @@ console.log('you clicked here');
 elm.addEventListener('click',()=>{
 	return t.get('board','shared','bid')
 		.then(data=>{
-			console.log(data)
 			(async function(){
         const sheetId = data;
         const cardList = [];
@@ -20,7 +19,6 @@ elm.addEventListener('click',()=>{
         const fetchPriorityData = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/priorityData?id=${boardId}`
         const fetchCardData = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardData?id=${boardId}`
         const createSheet = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/createSheet`
-        console.log(boardId)
 
         const cm = await fetch(fetchCardMembers)
         let memberData = await cm.text();
@@ -78,9 +76,9 @@ elm.addEventListener('click',()=>{
         const list = {'id':sheetId,data:finalList}
         console.log(JSON.stringify(list))
         console.log(JSON.stringify(finalList))
-        // const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(list),headers: {'Content-Type': 'application/json'}})
-        // let csResult = await cs.text();
-        // console.log(csResult)       
+        const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(list),headers: {'Content-Type': 'application/json'}})
+        let csResult = await cs.text();
+        console.log(csResult)       
             }())
 		});	
 })
