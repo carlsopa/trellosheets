@@ -12,6 +12,7 @@ elm.addEventListener('click',()=>{
 			(async function(){
         const sheetId = data;
         const cardList = [];
+        const mm = {};
 
         const fetchCardMembers = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers?id=${boardId}`
         const fetchCardLists = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardLists?id=${boardId}`
@@ -36,7 +37,11 @@ elm.addEventListener('click',()=>{
         labelData = JSON.parse(labelData);
         priorityData = JSON.parse(priorityData);
         cardData = JSON.parse(cardData);
-        console.log(memberData);
+        memberData[0].map(x=>{
+          mm[x.id] = x.fullName
+        })
+        console.log(mm)
+
                       
         cardData.map(x=>{
           const cardDict = {};
