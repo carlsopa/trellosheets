@@ -37,10 +37,12 @@ elm.addEventListener('click',()=>{
         labelData = JSON.parse(labelData);
         priorityData = JSON.parse(priorityData);
         cardData = JSON.parse(cardData);
-        memberData[0].map(x=>{
-          mm[x.id] = x.fullName
-        })
-        console.log(mm)
+        console.log(memberData);
+        console.log(memberData[0])
+        // memberData[0].map(x=>{
+        //   mm[x.id] = x.fullName
+        // })
+        // console.log(mm)
 
                       
         cardData.map(x=>{
