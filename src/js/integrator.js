@@ -36,6 +36,7 @@ elm.addEventListener('click',()=>{
         labelData = JSON.parse(labelData);
         priorityData = JSON.parse(priorityData);
         cardData = JSON.parse(cardData);
+        console.log(memberData);
                       
         cardData.map(x=>{
           const cardDict = {};
@@ -75,11 +76,10 @@ elm.addEventListener('click',()=>{
           finalList.push(Object.values(x))
         })
         const list = {'id':sheetId,data:finalList}
-        console.log(JSON.stringify(list))
-        console.log(JSON.stringify(finalList))
+
         const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(list),headers: {'Content-Type': 'application/json'}})
         let csResult = await cs.text();
-        console.log(csResult)       
+     
             }())
 		});	
 })
