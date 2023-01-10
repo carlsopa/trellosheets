@@ -8,7 +8,7 @@ async function getPlugin(id){
   const cp = await fetch(fetchCardPlugin)
   let pluginData = await cp.text();
   pluginData = JSON.parse(pluginData);
-  console.log(pluginData);
+  console.log(pluginData[0]);
   // return pluginData['value'].split(':').pop().split('')[0];
 
 }
