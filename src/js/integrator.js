@@ -59,7 +59,8 @@ elm.addEventListener('click',()=>{
                       
         cardData.map(x=>{
           const cardDict = {};
-          console.log(getPlugin(x.shortLink));
+          // console.log(getPlugin(x.shortLink));
+          cardDict['points'] = getPlugin(x.shortLink);
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
