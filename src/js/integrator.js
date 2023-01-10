@@ -82,7 +82,8 @@ elm.addEventListener('click',()=>{
           if(x.customFieldItems.length > 0){
             cardDict['priority'] = priorityData[x.customFieldItems[0].idValue]
           }
-          cardList.push(cardDict);
+          return cardDict;
+          // cardList.push(cardDict);
         })
         const aa = await Promise.all(cardListPromises)
         console.log(aa);
