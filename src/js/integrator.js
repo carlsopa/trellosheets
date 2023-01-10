@@ -1,10 +1,7 @@
 var t = TrelloPowerUp.iframe();
 const boardId = t.getContext().board;
-console.log('data')
-console.log(boardId)
 
 const elm = document.getElementById('subbtn');
-console.log('you clicked here');
 
 elm.addEventListener('click',()=>{
 	return t.get('board','shared','bid')

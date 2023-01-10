@@ -7,10 +7,8 @@ let set = false;
 t.render(()=>{
 	return t.get('board','shared','bid')
 		.then(data=>{
-			console.log(data)
 			let d = JSON.stringify(data)
 			if(d){
-				console.log('found')
 				set = true;
 				idValue.value = data;
 				idValue.readOnly = true
