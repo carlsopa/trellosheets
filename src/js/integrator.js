@@ -72,14 +72,18 @@ elm.addEventListener('click',()=>{
             date = date.toDateString();
             cardDict['last activity'] = date;
           }
-         
+          if(x.due){
             let date = new Date(x.due);
             date = date.toDateString();
             cardDict['due date'] = date;
-          
-         
+          } else {
+            cardDict['due date'] = '';
+          }
+          if(x.customFieldItems.length > 0){
             cardDict['priority'] = priorityData[x.customFieldItems[0].idValue]
-          
+          } else {
+            cardDict['priority'] = ''
+          }
           cardDict['points'] = await getPlugin(x.shortLink);
           return cardDict;
           // cardList.push(cardDict);
