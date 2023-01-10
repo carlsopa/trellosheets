@@ -42,12 +42,6 @@ elm.addEventListener('click',()=>{
         memberData.map(x=>{
           mm[x.id] = x.fullName;
         })
-        // mm[memberData[0].id] = memberData[0].fullName;
-        // memberData[0].map(x=>{
-        //   mm[x.id] = x.fullName
-        // })
-        console.log(mm)
-
                       
         cardData.map(x=>{
           const cardDict = {};
@@ -82,12 +76,11 @@ elm.addEventListener('click',()=>{
         })
 
         const finalList = []
-        finalList.push(['id','title','description','url','comments','board name','members','labels','last active','due','priority'])
+        finalList.push(['id','title','description','url','comments','list name','members','labels','last active','due','priority'])
         cardList.forEach(x=>{
           finalList.push(Object.values(x))
         })
         const list = {'id':sheetId,data:finalList}
-        console.log(JSON.stringify(list))
 
         const cs = await fetch(createSheet,{method:'POST',body:JSON.stringify(list),headers: {'Content-Type': 'application/json'}})
         let csResult = await cs.text();
