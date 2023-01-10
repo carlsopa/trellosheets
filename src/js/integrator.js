@@ -3,8 +3,8 @@ const boardId = t.getContext().board;
 
 const elm = document.getElementById('subbtn');
 
-async function getPlugin(){
-  const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin`
+async function getPlugin(id){
+  const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin?id=${id}`
   const cp = await fetch(fetchCardPlugin)
   let pluginData = await cp.text();
   console.log(JSON.parse(pluginData));
@@ -52,7 +52,7 @@ elm.addEventListener('click',()=>{
                       
         cardData.map(x=>{
           const cardDict = {};
-          getPlugin();
+          getPlugin(x.shortLink);
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
