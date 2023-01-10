@@ -7,7 +7,7 @@ async function getPlugin(){
   const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin`
   const cp = await fetch(fetchCardPlugin)
   let pluginData = await cp.text();
-  console.log(pluginData[0]);
+  console.log(JSON.parse(pluginData));
 
 }
 
