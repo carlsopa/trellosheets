@@ -79,7 +79,7 @@ elm.addEventListener('click',()=>{
         })
 
         const finalList = []
-        finalList.push(['id','title','description','url','comments','members','board name','labels','last active','due','priority'])
+        finalList.push(['id','title','description','url','comments','board name','members','labels','last active','due','priority'])
         cardList.forEach(x=>{
           finalList.push(Object.values(x))
         })
