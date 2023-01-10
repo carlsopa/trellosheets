@@ -13,7 +13,7 @@ async function getPlugin(id){
     return pluginData[0]['value'].split(':').pop().split('')[0]
   }
   else {
-    return ''
+    return null
   }
 }
 
