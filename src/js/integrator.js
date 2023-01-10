@@ -40,9 +40,9 @@ elm.addEventListener('click',()=>{
         console.log(memberData);
         console.log(memberData[0])
         memberData.map(x=>{
-          console.log(x)
+          mm[x.id] = x.fullName;
         })
-        mm[memberData[0].id] = memberData[0].fullName;
+        // mm[memberData[0].id] = memberData[0].fullName;
         // memberData[0].map(x=>{
         //   mm[x.id] = x.fullName
         // })
