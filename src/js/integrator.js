@@ -9,7 +9,7 @@ async function getPlugin(id){
   let pluginData = await cp.text();
   pluginData = JSON.parse(pluginData);
   console.log(typeof(pluginData[0]) != undefined)
-  if (typeof pluginData[0] != undefined){
+  if (pluginData[0] != undefined){
     return pluginData[0]['value'].split(':').pop().split('')[0]
   }
   else {
