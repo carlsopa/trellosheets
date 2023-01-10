@@ -46,6 +46,9 @@ elm.addEventListener('click',()=>{
                       
         cardData.map(x=>{
           const cardDict = {};
+          const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin`
+          const cp = await(fetch(fetchCardPlugin))
+          console.log(cp)
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
@@ -75,6 +78,7 @@ elm.addEventListener('click',()=>{
           }
           cardList.push(cardDict);
         })
+        console.log(cardList)
 
         const finalList = []
         finalList.push(['id','title','description','url','comments','list name','members','labels','last active','due','priority'])
