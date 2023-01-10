@@ -45,8 +45,8 @@ elm.addEventListener('click',()=>{
         cardData.map(x=>{
           const cardDict = {};
           const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin`
-          const cp = await(fetch(fetchCardPlugin))
-          console.log(cp)
+          
+          console.log(fetchCardPlugin)
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
