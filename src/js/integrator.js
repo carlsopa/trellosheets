@@ -43,6 +43,7 @@ elm.addEventListener('click',()=>{
         cardData.map(x=>{
           console.log(x);
         })
+        console.log('pre carddata map');
                       
         cardData.map(x=>{
           const cardDict = {};
