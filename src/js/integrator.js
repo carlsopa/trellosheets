@@ -55,7 +55,7 @@ elm.addEventListener('click',()=>{
           cardDict['comments'] = x.badges.comments;
           cardDict['list'] = listData[x.idList];
           x.idMembers.forEach((m,index)=>{
-            x.idMembers[index] = memberData[m]
+            x.idMembers[index] = mm[m]
           })
           cardDict['members'] = x.idMembers.join();
           x.idLabels.forEach((l,index)=>{
