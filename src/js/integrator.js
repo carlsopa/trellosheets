@@ -8,7 +8,12 @@ async function getPlugin(id){
   const cp = await fetch(fetchCardPlugin)
   let pluginData = await cp.text();
   pluginData = JSON.parse(pluginData);
-  console.log(pluginData[0]['value'].split(':').pop().split('')[0]);
+  if (typeof pluginData[0] != undefined){
+    return pluginData[0]['value'].split(':').pop().split('')[0]
+  }
+  else {
+    return ''
+  }
   // return pluginData['value'].split(':').pop().split('')[0];
 
 }
@@ -54,7 +59,7 @@ elm.addEventListener('click',()=>{
                       
         cardData.map(x=>{
           const cardDict = {};
-          getPlugin(x.shortLink);
+          console.log(getPlugin(x.shortLink));
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
