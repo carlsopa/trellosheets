@@ -7,7 +7,9 @@ async function getPlugin(id){
   const fetchCardPlugin = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardPlugin?id=${id}`
   const cp = await fetch(fetchCardPlugin)
   let pluginData = await cp.text();
-  console.log(JSON.parse(pluginData));
+  pluginData = JSON.parse(pluginData);
+  console.log(pluginData['value']);
+  return pluginData['value'].split(':').pop().split('')[0];
 
 }
 
@@ -52,7 +54,7 @@ elm.addEventListener('click',()=>{
                       
         cardData.map(x=>{
           const cardDict = {};
-          getPlugin(x.shortLink);
+          console.log(getPlugin(x.shortLink));
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
