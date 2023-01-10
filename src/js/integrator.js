@@ -40,6 +40,7 @@ elm.addEventListener('click',()=>{
         memberData.map(x=>{
           mm[x.id] = x.fullName;
         })
+        console.log(cardData)
                       
         cardData.map(x=>{
           const cardDict = {};
