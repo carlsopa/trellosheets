@@ -133,7 +133,7 @@ elm.addEventListener('click',()=>{
 
         const finalList = []
         finalList.push(['id','title','description','url','comments','list name','members','labels','last active','due','priority'])
-        cardList.forEach(x=>{
+        aa.forEach(x=>{
           finalList.push(Object.values(x))
         })
         const list = {'id':sheetId,data:finalList}
