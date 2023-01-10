@@ -22,7 +22,6 @@ elm.addEventListener('click',()=>{
 		.then(data=>{
 			(async function(){
         const sheetId = data;
-        const cardList = [];
         const mm = {};
 
         const fetchCardMembers = `https://dr2d89rv2e.execute-api.us-east-1.amazonaws.com/latest/cardMembers?id=${boardId}`
@@ -54,8 +53,6 @@ elm.addEventListener('click',()=>{
 
         const cardListPromises = cardData.map(async(x)=>{
           const cardDict = {};
-          // console.log(getPlugin(x.shortLink));
-          cardDict['points'] = await getPlugin(x.shortLink);
           cardDict['id'] = x.id;
           cardDict['title'] = x.name;
           cardDict['description'] = x.desc;
@@ -83,57 +80,17 @@ elm.addEventListener('click',()=>{
           if(x.customFieldItems.length > 0){
             cardDict['priority'] = priorityData[x.customFieldItems[0].idValue]
           }
+          cardDict['points'] = await getPlugin(x.shortLink);
           return cardDict;
           // cardList.push(cardDict);
         })
-        const aa = await Promise.all(cardListPromises)
-        console.log(aa);
+        const cardList = await Promise.all(cardListPromises)
+
         console.log(cardList);
                      
-
-
-
-
-
-
-        // await cardData.map(x=>{
-        //   const cardDict = {};
-        //   // console.log(getPlugin(x.shortLink));
-        //   cardDict['points'] = getPlugin(x.shortLink);
-        //   cardDict['id'] = x.id;
-        //   cardDict['title'] = x.name;
-        //   cardDict['description'] = x.desc;
-        //   cardDict['url'] = x.url;
-        //   cardDict['comments'] = x.badges.comments;
-        //   cardDict['list'] = listData[x.idList];
-        //   x.idMembers.forEach((m,index)=>{
-        //     x.idMembers[index] = mm[m]
-        //   })
-        //   cardDict['members'] = x.idMembers.join();
-        //   x.idLabels.forEach((l,index)=>{
-        //     x.idLabels[index] = labelData[l];
-        //   })
-        //   cardDict['labels'] = x.idLabels.join(', ');
-        //   if(x.dateLastActivity){
-        //     let date = new Date(x.dateLastActivity);
-        //     date = date.toDateString();
-        //     cardDict['last activity'] = date;
-        //   }
-        //   if(x.due){
-        //     let date = new Date(x.due);
-        //     date = date.toDateString();
-        //     cardDict['due date'] = date;
-        //   }
-        //   if(x.customFieldItems.length > 0){
-        //     cardDict['priority'] = priorityData[x.customFieldItems[0].idValue]
-        //   }
-        //   cardList.push(cardDict);
-        // })
-        // console.log(cardList)
-
         const finalList = []
-        finalList.push(['id','title','description','url','comments','list name','members','labels','last active','due','priority'])
-        aa.forEach(x=>{
+        finalList.push(['id','title','description','url','comments','list name','members','labels','last active','due','priority','story points'])
+        cardList.forEach(x=>{
           finalList.push(Object.values(x))
         })
         const list = {'id':sheetId,data:finalList}
